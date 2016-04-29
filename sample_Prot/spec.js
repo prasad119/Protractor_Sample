@@ -1,4 +1,4 @@
-describe('Gmail demo', function() {
+describe('Posse demo', function() {
 	it('Enter Hyderabad in Search and click on search button', function(){
 		console.log("Entered into TestCase");
 		element(by.model('userInputQuery')).sendKeys('Hyderabad');
