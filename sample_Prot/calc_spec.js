@@ -1,16 +1,17 @@
 describe('It performs the calculator operation', function() {
 	beforeEach(function() {
-		browser.ignoreSynchronization = true
+		browser.driver.ignoreSynchronization = false //It is need to maintain for handling non angular applications
 		console.log("Opening shavik");
-		browser.get('http://fs.shavik.com.au/calc/');
-		expect(browser.getTitle().toEqual('Wealthsense Calculator '));
-	}, 2000);
+		browser.driver.get('http://fs.shavik.com.au/calc/');
+	}, 10000);
 	afterEach(function() {
-		browser.close();
-		browser.quit();
+		browser.driver.close();
+		browser.driver.quit();
 	});
 
 	it('clicks on the dashboard in home page',function(){
-		element(by.xpath("//button[contains(text(),'Dashboard')]")).click();
+		browser.driver.ignoreSynchronization = false
+		var ele = browser.driver.findElement(by.css("button:contains('Dashboard')"));
+		ele.click();
 	});
 });
